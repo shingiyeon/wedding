@@ -6,8 +6,5 @@ module.exports = {
         additionalData: `@import "~@/assets/styles/_var.scss";`,
       },
     },
-  },
-  devServer: {
-    disableHostCheck: true,
-  },
+  }
 };

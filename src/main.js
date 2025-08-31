@@ -1,34 +1,19 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import VScrollLock from 'v-scroll-lock'
 import App from './App.vue'
-import Divider from './components/Divider.vue'
-import Button from './components/Button.vue'
-import firebase from 'firebase/app'
+import Divider from './components/SectionDivider.vue'
+import Button from './components/ButtonType.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import VueClipboard from 'vue-clipboard2'
+import { useKakao } from 'vue3-kakao-maps/@utils'
 
-Vue.config.productionTip = false
+useKakao('2ca12e1efba7068af5f4e43492868a76');
+const app = createApp(App);
 
-Vue.use(VScrollLock)
-Vue.use(VueClipboard)
-Vue.component('Divider', Divider)
-Vue.component('Button', Button)
-
-// use your firebase info
-var firebaseConfig = {
-  apiKey: 'Use your api key',
-  authDomain: 'carepass-test.firebaseapp.com',
-  databaseURL: 'https://carepass-test.firebaseio.com',
-  projectId: 'carepass-test',
-  storageBucket: 'carepass-test.appspot.com',
-  messagingSenderId: '{Use your messagingSenderId}',
-  appId: '{Use your appId}',
-}
-firebase.initializeApp(firebaseConfig)
-
-new AOS.init()
-
-new Vue({
-  render: (h) => h(App),
-}).$mount('#app')
+new AOS.init();
+app.use(VScrollLock);
+app.use(VueClipboard);
+app.component('SectionDivider', Divider);
+app.component('ButtonType', Button);
+app.mount('#app');

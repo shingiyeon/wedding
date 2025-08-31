@@ -3,77 +3,40 @@
 <template>
   <div id="kyong">
     <FlowerRain />
-    <IntroMovie />
-    <Live />
-    <Divider />
-    <Gallery />
-    <Divider />
-    <Celebrate @click="handleClick" :presents="presents" />
-    <Divider />
-    <Map />
-    <Divider />
-    <Funding />
-    <Divider />
-    <div style="display: none">
-      <Credit />
-    </div>
-    <BottomSheet
-      :is-open="isOpen"
-      @close="handleClose"
-      v-scroll-lock="isOpen"
-      :present="selectedPresent"
-    />
+    <IntroMovie data-aos="fade-up"/>
+    <Live data-aos="fade-up" data-aos-offset="0" data-aos-delay="200"/>
+    <Gallery data-aos="fade-up" data-aos-offset="800" data-aos-delay="200"/>
+    <LocationMap data-aos="fade-up" data-aos-offset="1000" data-aos-delay="200"/>
+    <CelebrationInfo data-aos="fade-up" data-aos-offset="1100" data-aos-delay="200"/>
   </div>
 </template>
 
 <script>
 import IntroMovie from "./components/IntroMovie.vue";
-import Live from "./components/Live.vue";
-import Gallery from "./components/Gallery.vue";
-import Funding from "./components/Funding.vue";
-import Credit from "./components/Credit.vue";
-import Celebrate from "./components/Celebrate.vue";
-import Map from "./components/Map.vue";
+import Live from "./components/YoutubeLive.vue";
+import CelebrationInfo from "./components/CelebrationInfo.vue";
+import Gallery from "./components/PhotoGallery.vue";
+import LocationMap from "./components/LocationMap.vue";
 import FlowerRain from "./components/FlowerRain.vue";
-import BottomSheet from "./components/BottomSheet.vue";
-import firebase from "firebase";
+
+import AOS from "aos";
 
 export default {
   name: "App",
   components: {
     IntroMovie,
     Live,
+    CelebrationInfo,
     Gallery,
-    Funding,
-    Credit,
-    Celebrate,
     FlowerRain,
-    BottomSheet,
-    Map,
+    LocationMap
   },
   data() {
     return {
-      isOpen: false,
-      presents: [],
-      selectedPresent: {},
+      isOpen: false
     };
   },
-  created() {
-    this.loadPresents();
-  },
   methods: {
-    loadPresents() {
-      const presentsRef = firebase.database().ref("presents");
-      presentsRef.on("value", (snapshot) => {
-        const presents = snapshot.val();
-        this.presents = presents.map((present, index) => {
-          return {
-            ...present,
-            id: index,
-          };
-        });
-      });
-    },
     handleClick(present) {
       this.isOpen = true;
       this.selectedPresent = present;
@@ -82,6 +45,10 @@ export default {
       this.isOpen = false;
     },
   },
+  mounted() {
+    AOS.init({
+    });
+  }
 };
 </script>
 

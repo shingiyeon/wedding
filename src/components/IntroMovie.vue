@@ -1,16 +1,7 @@
 <template>
   <div class="intro-movie">
     <div class="image">
-      <img src="~@/assets/images/intro-image.png" />
-    </div>
-    <div class="movie">
-      <video
-        poster="/wedding/img/video-thumbnail.jpg"
-        :autoplay="getOS() !== 'iOS'"
-        controls
-      >
-        <source src="/wedding/intro.mp4" type="video/mp4" />
-      </video>
+      <img src="/wedding/img/intro-image8.PNG" />
     </div>
   </div>
 </template>
@@ -47,9 +38,9 @@ export default {
 
 <style lang="scss" scoped>
 .intro-movie {
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   max-height: 780px;
   background-color: #ffffff;
   font-size: 0;

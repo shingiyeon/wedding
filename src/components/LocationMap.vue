@@ -1,0 +1,181 @@
+<template>
+  <div>
+    <SectionDivider />
+    <div class="map">
+      <img src="~@/assets/images/goose.png" class="goose">
+      <div class="description">
+        Location
+      </div>
+      <div class="map-container" ref="gal">
+        <KakaoMap style="width: 100%" :lat="center.lat" :lng="center.lng" :draggable="true">
+          <KakaoMapMarker :lat="center.lat" :lng="center.lng"></KakaoMapMarker>
+        </KakaoMap>
+      </div>
+      <h2 class="h2">오시는길</h2>
+      <p>
+        서울시 중구 청파로 463 한국경제신문사 루이비스웨딩 18F (다산홀)
+      </p>
+      <h2 class="h2">자가용</h2>
+      <p class="black">
+        "한국경제신문사" 또는 <br/>
+        "서울시 중구 청파로 463 한국경제신문사" 검색<br/>
+        본 건물 지하주차장 이용
+      </p>
+      <h2 class="h2">셔틀버스</h2>
+      <p class="black">
+        1, 4호선 서울역 롯데마트 앞 버스정류장 수시운행 (약 10분 간격)
+      </p>
+      <h2 class="h2">지하철</h2>
+      <p class="black">
+        2, 5호선 충정로역 4번출구 도보 5분
+      </p>
+      <h2 class="h2">버스</h2>
+      <p class="black">
+        한국경제신문사, 종근당, 서울역 서부, 경찰청(서대분경찰서) 하차 <br/><br/>
+        <span>간선:</span> 370, 603, 172, 472, 173, 261, 262, 463, 503, 604,<br/>
+        101, 700, 701, 704, 705, 707, 750, 752, 742 <br/>
+        <span>지선:</span> 7011, 7017, 7019, 7021, 7024 <br/>
+        <span>광역:</span> 1000, 1100, 1101, 1200, 1300, 1301, 1400, 1500, <br/>
+        1601, 9701, 9710, 9703, 9709, 9714, M7106
+      </p>
+    </div>
+  </div>
+</template>
+
+<script>
+
+import { KakaoMap, KakaoMapMarker} from 'vue3-kakao-maps';
+import SectionDivider from './SectionDivider.vue';
+
+export default {
+  name: "LocationMap",
+  components: { KakaoMap, KakaoMapMarker, SectionDivider},
+  data() {
+    return {
+      scrollX: 0,
+      width: 320,
+      appKey: '13820f5d51d54f2bfb5203278b7bf8b9', // 테스트용 appkey
+      center: {lat: 37.560635, lng: 126.967378}, // 지도의 중심 좌표
+      level: 3, // 지도의 레벨(확대, 축소 정도),
+      libraries: ["drawing"], // 추가로 불러올 라이브러리
+      map: null, // 지도 객체. 지도가 로드되면 할당됨.
+      daum: null, // 다음 API 객체. 지도가 로드되면 할당됨.w
+      //////////////
+      tmapUrl: "",
+      kakaoTaxiUrl: "",
+      navermapUrl: "",
+      kakaomapUrl: ""
+
+    };
+  },
+  mounted() {
+    this.makeUrls()
+  },
+  methods: {
+    // 지도가 로드 완료되면 load 이벤트 발생
+    onLoad(map, daum) {
+      this.map = map;
+      this.daum = daum;
+
+      // 지도를 클릭한 위치에 표출할 마커입니다
+      var marker = new kakao.maps.Marker({
+        // 지도 중심좌표에 마커를 생성합니다
+        position: map.getCenter()
+      });
+      // 지도에 마커를 표시합니다
+      marker.setMap(map);
+    },
+    makeUrls() {
+      // 장소데이터의 이름정보 불러온 뒤
+      const locationName = "루이비스중구점"
+      this.tmapUrl = "tmap://search?name=" + locationName
+      this.kakaoTaxiUrl = "https://t.kakao.com/launch?type=taxi&amp;dest_lat=37.49878007763176&amp;dest_lng=127.03170076652506&amp;ref=localweb"
+      this.navermapUrl = "nmap://search?query=" + locationName + "&appname=kimyoon21.github.io/wedding"
+      this.kakaomapUrl = "kakaomap://search?q=" + locationName
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+
+.map {
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  padding-left: $padding-vertical;
+  padding-right: $padding-vertical;
+  text-align: center;
+
+  .goose {
+    width: 75px;
+    margin-bottom: 20px;
+  }
+}
+
+.map-container {
+  margin-bottom: 30px;
+}
+
+.description {
+  font-size: 12px;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+  color: #295138;
+}
+
+.navi-apps {
+  align-content: center;
+  position: relative;
+
+  .ico_comm img {
+    vertical-align: middle;
+    width: 40px
+  }
+
+  div {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  a{
+    text-decoration: none;
+  }
+}
+
+
+.h2 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #295138;
+}
+
+
+p {
+  line-height: 16px;
+  text-align: middle;
+  color: #295138;
+  &.black {
+    color: #202121;
+  }
+  margin-bottom: 30px;
+  font-size: 13px;
+
+  span {
+    font-size: 15px;
+  }
+}
+
+.cover {
+  display: flex;
+  justify-content: space-between;
+  margin: 22px 10% 22px 10%;
+}
+
+.link {
+  color: #295238;
+}
+
+</style>
