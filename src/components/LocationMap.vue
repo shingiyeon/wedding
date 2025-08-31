@@ -69,7 +69,7 @@ export default {
     };
   },
   mounted() {
-    this.makeUrls()
+    this.makeUrls();
   },
   methods: {
     // 지도가 로드 완료되면 load 이벤트 발생
