@@ -54,7 +54,7 @@ export default {
     return {
       scrollX: 0,
       width: 320,
-      appKey: '13820f5d51d54f2bfb5203278b7bf8b9', // 테스트용 appkey
+      appKey: 'cf37e4b461393d6f5bda4dca156feb23', // 테스트용 appkey
       center: {lat: 37.560635, lng: 126.967378}, // 지도의 중심 좌표
       level: 3, // 지도의 레벨(확대, 축소 정도),
       libraries: ["drawing"], // 추가로 불러올 라이브러리

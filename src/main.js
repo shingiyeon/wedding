@@ -8,7 +8,7 @@ import 'aos/dist/aos.css'
 import VueClipboard from 'vue-clipboard2'
 import { useKakao } from 'vue3-kakao-maps/@utils'
 
-useKakao('2ca12e1efba7068af5f4e43492868a76');
+useKakao('cf37e4b461393d6f5bda4dca156feb23');
 const app = createApp(App);
 
 new AOS.init();
