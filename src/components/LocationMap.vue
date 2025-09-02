@@ -157,6 +157,7 @@ export default {
   position: relative;
 
   .ico_comm img {
+    display: inline;
     vertical-align: middle;
     width: 40px
   }
