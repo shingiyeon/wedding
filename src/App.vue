@@ -53,7 +53,7 @@ export default {
     setTimeout(() => {
       this.showMap = true;
       this.$nextTick(() => AOS.init()) // DOM 렌더링 후 refresh
-    }, 100) // 50~100ms 정도 지연
+    }, 200) // 50~100ms 정도 지연
   }
 };
 </script>
