@@ -5,10 +5,10 @@
     <MusicButton />
     <FlowerRain />
     <IntroMovie v-if="showMap" data-aos-offset="60" data-aos="fade-up"/>
-    <Live v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
-    <Gallery v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
-    <LocationMap v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
-    <CelebrationInfo v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
+    <Live v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="130"/>
+    <Gallery v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="130"/>
+    <LocationMap v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="130"/>
+    <CelebrationInfo v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="130"/>
   </div>
 </template>
 

@@ -54,6 +54,7 @@ export default {
     img {
       max-width: 100%;
       max-height: 100%;
+      height: 710px;
     }
   }
   .movie {
