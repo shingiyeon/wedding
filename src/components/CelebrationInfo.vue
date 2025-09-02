@@ -12,13 +12,13 @@
           <div v-else>
             <p class="black">신랑 혼주 계좌</p>
             <p class="account">{{bumdad.account}} (예금주: {{ bumdad.name }})</p>
-            <button @click="urlLink(bumdad)">계좌번호 복사하기</button>
+            <button class="copyAccount" @click="urlLink(bumdad)">계좌번호 복사하기</button>
             <p class="black">신랑 혼주 계좌</p>
             <p class="account">{{bummom.account}} (예금주: {{  bummom.name }})</p>
-            <button @click="urlLink(bummom)">계좌번호 복사하기</button>
+            <button class="copyAccount" @click="urlLink(bummom)">계좌번호 복사하기</button>
             <p class="black">신랑 계좌</p>
             <p class="account"> {{bum.account }} (예금주: {{ bum.name }})</p>
-            <button @click="urlLink(bum)">계좌번호 복사하기</button>
+            <button class="copyAccount" @click="urlLink(bum)">계좌번호 복사하기</button>
           </div>
         </Transition>
       </div>
@@ -30,13 +30,13 @@
           <div v-else>
             <p class="black">신랑 혼주 계좌</p>
             <p class="account">{{ heydad.account }}(예금주: {{ heydad.name }})</p>
-            <button @click="urlLink(heydad)">계좌번호 복사하기</button>
+            <button class="copyAccount" @click="urlLink(heydad)">계좌번호 복사하기</button>
             <p class="black">신랑 혼주 계좌</p>
             <p class="account">{{ heymom.account }} (예금주: {{ heymom.name }})</p>
-            <button @click="urlLink(heymom)">계좌번호 복사하기</button>
+            <button class="copyAccount" @click="urlLink(heymom)">계좌번호 복사하기</button>
             <p class="black">신랑 계좌</p>
             <p class="account">{{ hey.account }} (예금주: {{ hey.name }})</p>
-            <button @click="urlLink(hey)">계좌번호 복사하기</button>
+            <button class="copyAccount" @click="urlLink(hey)">계좌번호 복사하기</button>
           </div>
         </Transition>
       </div>
@@ -149,7 +149,7 @@ export default {
     border: 1px solid #295138;
     border-radius: 10px;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
     overflow: hidden;
     transition: all 0.3s ease; // 0.3초 동안 높이 변화
 
@@ -163,8 +163,8 @@ export default {
   }
 
   button {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: $padding-vertical;
@@ -173,7 +173,19 @@ export default {
     
     &.accountInfo {
       color: #295238;
+      padding-top: 5px;
+      padding-bottom: 5px;
       background-color: white;
+    }
+
+    &.copyAccount {
+      color: white;
+      background-color: #295238;
+      font-size: 12px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 3px;
+      padding-bottom: 3px;
     }
   }
   .description {
@@ -189,8 +201,15 @@ export default {
   p {
     line-height: 24px;
     &.black {
+      margin-top: 10px;
+      line-height: 12px;
       color: #202121;
       font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    &.account{
+      line-height: 7px;
     }
   }
   .goose {
