@@ -49,7 +49,7 @@ export default {
   padding-top: 10px;
   padding-left: $padding-vertical;
   padding-right: $padding-vertical;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
   text-align: center;
   .hands {
     width: 75px;

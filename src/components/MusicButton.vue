@@ -42,11 +42,15 @@
   }
   
   onMounted(() => {
-    audio = new Audio("/wedding/music/bgm.mp3")
-    audio.autoplay = true;
+    audio = new Audio("/wedding/music/bgm.mp3");
+    audio.play().then(() => {
+        isPlaying.value = true;
+    }).catch(() => {
+        isPlaying.value = false;
+    });
     audio.loop = true;
-    window.addEventListener("scroll", onScroll)
-    animate()
+    window.addEventListener("scroll", onScroll);
+    animate();
   })
   
   onUnmounted(() => {
