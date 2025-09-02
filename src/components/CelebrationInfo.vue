@@ -197,11 +197,15 @@ export default {
     width: 90px;
     margin-top: 67px;
     margin-bottom: 20px;
+
+    display: inline;
   }
   .cat {
     width: 85px;
     margin-top: 10px;
     margin-bottom: 10px;
+
+    display: inline;
   }
 
   .gift-list {

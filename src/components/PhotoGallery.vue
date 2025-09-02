@@ -54,7 +54,7 @@ export default {
 <style lang="scss" scoped>
 .gallery {
   padding-top: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   padding-left: $padding-vertical;
   padding-right: $padding-vertical;
   text-align: center;
@@ -63,6 +63,7 @@ export default {
   .bunny {
     width: 65px;
     margin-bottom: 20px;
+    display: inline;
   }
   .description {
     font-size: 12px;

@@ -2,12 +2,13 @@
 
 <template>
   <div id="kyong">
+    <MusicButton />
     <FlowerRain />
-    <IntroMovie data-aos="fade-up"/>
-    <Live data-aos="fade-up" data-aos-offset="0" data-aos-delay="200"/>
-    <Gallery data-aos="fade-up" data-aos-offset="800" data-aos-delay="200"/>
-    <LocationMap data-aos="fade-up" data-aos-offset="1000" data-aos-delay="200"/>
-    <CelebrationInfo data-aos="fade-up" data-aos-offset="1100" data-aos-delay="200"/>
+    <IntroMovie v-if="showMap" data-aos-offset="60" data-aos="fade-up"/>
+    <Live v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
+    <Gallery v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
+    <LocationMap v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
+    <CelebrationInfo v-if="showMap" data-aos="fade-up" data-aos-offset="60" data-aos-delay="100"/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import CelebrationInfo from "./components/CelebrationInfo.vue";
 import Gallery from "./components/PhotoGallery.vue";
 import LocationMap from "./components/LocationMap.vue";
 import FlowerRain from "./components/FlowerRain.vue";
+import MusicButton from "./components/MusicButton.vue";
 
 import AOS from "aos";
 
@@ -29,10 +31,12 @@ export default {
     CelebrationInfo,
     Gallery,
     FlowerRain,
-    LocationMap
+    LocationMap,
+    MusicButton
   },
   data() {
     return {
+      showMap: false,
       isOpen: false
     };
   },
@@ -46,8 +50,10 @@ export default {
     },
   },
   mounted() {
-    AOS.init({
-    });
+    setTimeout(() => {
+      this.showMap = true;
+      this.$nextTick(() => AOS.init()) // DOM 렌더링 후 refresh
+    }, 100) // 50~100ms 정도 지연
   }
 };
 </script>

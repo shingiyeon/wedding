@@ -54,6 +54,7 @@ export default {
   .hands {
     width: 75px;
     margin-bottom: 16px;
+    display: inline;
   }
   p {
     margin-bottom: 16px;

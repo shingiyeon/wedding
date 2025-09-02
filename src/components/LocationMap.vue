@@ -6,10 +6,36 @@
       <div class="description">
         Location
       </div>
-      <div class="map-container" ref="gal">
+      <!-- <div class="map-container" ref="gal">
         <KakaoMap style="width: 100%" :lat="center.lat" :lng="center.lng" :draggable="true">
           <KakaoMapMarker :lat="center.lat" :lng="center.lng"></KakaoMapMarker>
         </KakaoMap>
+      </div> -->
+      <div class="cover">
+        <div class="navi-apps">
+          <a v-bind:href="tmapUrl">
+            <div class="ico_comm ico_tmap"><img src="~@/assets/images/icons/tmap.png"/></div>
+            <div class="link">T맵</div>
+          </a>
+        </div>
+        <div class="navi-apps">
+          <a v-bind:href="kakaoTaxiUrl">
+            <div class="ico_comm ico_taxi"><img src="~@/assets/images/icons/kakaot.png"/></div>
+            <div class="link">카카오택시</div>
+          </a>
+        </div>
+        <div class="navi-apps">
+          <a v-bind:href="navermapUrl">
+            <div class="ico_comm ico_navermap"><img src="~@/assets/images/icons/navermap.png"/></div>
+            <div class="link">네이버맵</div>
+          </a>
+        </div>
+        <div class="navi-apps">
+          <a v-bind:href="kakaomapUrl">
+            <div class="ico_comm ico_kakaomap"><img src="~@/assets/images/icons/kakaomap.png"/></div>
+            <div class="link">카카오맵</div>
+          </a>
+        </div>
       </div>
       <h2 class="h2">오시는길</h2>
       <p>
@@ -44,12 +70,13 @@
 
 <script>
 
-import { KakaoMap, KakaoMapMarker} from 'vue3-kakao-maps';
+// import { KakaoMap, KakaoMapMarker} from 'vue3-kakao-maps';
 import SectionDivider from './SectionDivider.vue';
 
 export default {
   name: "LocationMap",
-  components: { KakaoMap, KakaoMapMarker, SectionDivider},
+  components: {  SectionDivider},
+  // KakaoMap, KakaoMapMarker,
   data() {
     return {
       scrollX: 0,
@@ -87,11 +114,10 @@ export default {
     },
     makeUrls() {
       // 장소데이터의 이름정보 불러온 뒤
-      const locationName = "루이비스중구점"
-      this.tmapUrl = "tmap://search?name=" + locationName
-      this.kakaoTaxiUrl = "https://t.kakao.com/launch?type=taxi&amp;dest_lat=37.49878007763176&amp;dest_lng=127.03170076652506&amp;ref=localweb"
-      this.navermapUrl = "nmap://search?query=" + locationName + "&appname=kimyoon21.github.io/wedding"
-      this.kakaomapUrl = "kakaomap://search?q=" + locationName
+      this.tmapUrl = "https://apis.openapi.sk.com/tmap/app/poidetail?appKey=YqPXcIppwj6jVD4zxaZcG7SyZXvNlttC7s9YYw0a&poiId=10243691"
+      this.kakaoTaxiUrl = "https://t.kakao.com/launch?type=taxi&amp;dest_lat=37.560635&amp;dest_lng=126.967378&amp;ref=localweb"
+      this.navermapUrl = "https://m.place.naver.com/place/20688305/home"
+      this.kakaomapUrl = "https://place.map.kakao.com/14921865"
     }
   }
 };
@@ -110,6 +136,8 @@ export default {
   .goose {
     width: 75px;
     margin-bottom: 20px;
+
+    display: inline;
   }
 }
 

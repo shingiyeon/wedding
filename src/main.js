@@ -7,6 +7,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import VueClipboard from 'vue-clipboard2'
 import { useKakao } from 'vue3-kakao-maps/@utils'
+import './assets/tailwind.css'
 
 useKakao('cf37e4b461393d6f5bda4dca156feb23');
 const app = createApp(App);
