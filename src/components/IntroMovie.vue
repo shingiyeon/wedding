@@ -1,7 +1,7 @@
 <template>
   <div class="intro-movie">
     <div class="image">
-      <img src="/wedding/img/intro-image8.png" />
+      <img src="/wedding/img/intro-image9.png" />
     </div>
   </div>
 </template>

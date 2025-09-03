@@ -138,7 +138,7 @@ export default {
 
 .celebrate {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   padding-left: $padding-vertical;
   padding-right: $padding-vertical;
   text-align: center;
@@ -221,6 +221,7 @@ export default {
   }
   .cat {
     width: 85px;
+    height: 67px;
     margin-top: 10px;
     margin-bottom: 10px;
 

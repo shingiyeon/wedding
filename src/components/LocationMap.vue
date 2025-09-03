@@ -135,6 +135,7 @@ export default {
 
   .goose {
     width: 75px;
+    height: 73px;
     margin-bottom: 20px;
 
     display: inline;

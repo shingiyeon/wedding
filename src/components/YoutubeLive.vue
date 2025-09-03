@@ -53,6 +53,7 @@ export default {
   text-align: center;
   .hands {
     width: 75px;
+    height: 81px;
     margin-bottom: 16px;
     display: inline;
   }

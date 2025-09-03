@@ -62,6 +62,7 @@ export default {
   overflow: hidden;
   .bunny {
     width: 65px;
+    height: 58px;
     margin-bottom: 20px;
     display: inline;
   }
