@@ -1,7 +1,7 @@
 <template>
   <div class="intro-movie">
     <div class="image">
-      <img src="/wedding/img/intro-image9.png" />
+      <img src="/wedding/img/intro-image10.png" />
     </div>
   </div>
 </template>
@@ -52,9 +52,9 @@ export default {
     justify-content: center;
     align-items: flex-end;
     img {
-      max-width: 100%;
-      max-height: 100%;
-      height: 710px;
+      width: 100%;
+      aspect-ratio: 416/710;
+      max-height: 710px;
     }
   }
   .movie {
