@@ -28,13 +28,13 @@
         <Transition name="display" mode="out-in">
           <button class="accountInfo" v-if="!showHeyInfo">신부측 계좌번호</button>
           <div v-else>
-            <p class="black">신랑 혼주 계좌</p>
+            <p class="black">신부 혼주 계좌</p>
             <p class="account">{{ heydad.account }}(예금주: {{ heydad.name }})</p>
             <button class="copyAccount" @click="urlLink(heydad)">계좌번호 복사하기</button>
-            <p class="black">신랑 혼주 계좌</p>
+            <p class="black">신부 혼주 계좌</p>
             <p class="account">{{ heymom.account }} (예금주: {{ heymom.name }})</p>
             <button class="copyAccount" @click="urlLink(heymom)">계좌번호 복사하기</button>
-            <p class="black">신랑 계좌</p>
+            <p class="black">신부 계좌</p>
             <p class="account">{{ hey.account }} (예금주: {{ hey.name }})</p>
             <button class="copyAccount" @click="urlLink(hey)">계좌번호 복사하기</button>
           </div>
