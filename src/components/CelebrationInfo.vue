@@ -41,6 +41,7 @@
         </Transition>
       </div>
     </div>
+    <SectionDivider />
   </div>
 </template>
 
@@ -145,6 +146,7 @@ export default {
   color: #295138;
 
   .accountDisplay {
+    display: block;
     background-color: #ffffff;
     border: 1px solid #295138;
     border-radius: 10px;
@@ -152,12 +154,13 @@ export default {
     margin-bottom: 3px;
     overflow: hidden;
     transition: all 0.3s ease; // 0.3초 동안 높이 변화
-
+    max-width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
     &.active{
         align-items: center;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
 
   }
@@ -181,7 +184,7 @@ export default {
     &.copyAccount {
       color: white;
       background-color: #295238;
-      font-size: 12px;
+      font-size: 10px;
       padding-left: 5px;
       padding-right: 5px;
       padding-top: 3px;
@@ -204,11 +207,12 @@ export default {
       margin-top: 10px;
       line-height: 12px;
       color: #202121;
-      font-size: 18px;
+      font-size: 15px;
       margin-bottom: 10px;
     }
 
     &.account{
+      font-size: 13px;
       line-height: 7px;
     }
   }
