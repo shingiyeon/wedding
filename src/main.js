@@ -9,7 +9,7 @@ import VueClipboard from 'vue-clipboard2'
 import { useKakao } from 'vue3-kakao-maps/@utils'
 import './assets/tailwind.css'
 
-useKakao('cf37e4b461393d6f5bda4dca156feb23');
+useKakao('2ca12e1efba7068af5f4e43492868a76');
 const app = createApp(App);
 
 // new AOS.init();

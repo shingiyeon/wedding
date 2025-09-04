@@ -6,11 +6,11 @@
       <div class="description">
         Location
       </div>
-      <!-- <div class="map-container" ref="gal">
+      <div class="map-container" ref="gal">
         <KakaoMap style="width: 100%" :lat="center.lat" :lng="center.lng" :draggable="true">
           <KakaoMapMarker :lat="center.lat" :lng="center.lng"></KakaoMapMarker>
         </KakaoMap>
-      </div> -->
+      </div>
       <div class="cover">
         <div class="navi-apps">
           <a v-bind:href="tmapUrl">
@@ -70,13 +70,13 @@
 
 <script>
 
-// import { KakaoMap, KakaoMapMarker} from 'vue3-kakao-maps';
+import { KakaoMap, KakaoMapMarker} from 'vue3-kakao-maps';
 import SectionDivider from './SectionDivider.vue';
 
 export default {
   name: "LocationMap",
-  components: {  SectionDivider},
-  // KakaoMap, KakaoMapMarker,
+  components: {KakaoMap, KakaoMapMarker, SectionDivider},
+  
   data() {
     return {
       scrollX: 0,
