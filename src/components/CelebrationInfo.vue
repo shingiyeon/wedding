@@ -65,23 +65,23 @@ export default {
       },
       bumdad: {
         name: "신조용",
-        account: "농협 123123123123"
+        account: "신협 132104863582"
       },
       bummom: {
         name: "한세숙",
-        account: "농협 123123123123"
+        account: "국민은행 77000101223928"
       },
       hey: {
         name: "이은지",
-        account: "국민은행 80350200031139"
+        account: "국민은행 70490200116689"
       },
       heydad: {
         name: "이기봉",
-        account: "농협 123123123123"
+        account: "국민은행 011240115083"
       },
       heymom: {
         name: "남길연",
-        account: "농협 123123123123"
+        account: "국민은행 071210685736"
       },
     }
   },
