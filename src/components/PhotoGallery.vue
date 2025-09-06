@@ -9,7 +9,7 @@
       <div></div>
       <div class="gallery-container" ref="gal">
         <div class="gallery-inner">
-          <div class="gallery-item" v-for="n in 16" :key="n">
+          <div class="gallery-item" v-for="n in 17" :key="n">
             <div class="image">
               <img
                 :src="`/wedding/gallery/${n - 1}.jpeg`"
@@ -46,7 +46,7 @@ export default {
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
     );
-    this.$refs.gal.scrollLeft = 0;
+    this.$refs.gal.scrollLeft = 99;
   },
 };
 </script>
