@@ -40,6 +40,9 @@
           </div>
         </Transition>
       </div>
+      <p class="red">
+        축하화환은 감사하지만 정중히 사양하겠습니다.
+      </p>
     </div>
     <SectionDivider />
   </div>
@@ -203,6 +206,7 @@ export default {
   }
   p {
     line-height: 24px;
+    text-align: middle;
     &.black {
       margin-top: 10px;
       line-height: 12px;
@@ -211,9 +215,12 @@ export default {
       margin-bottom: 10px;
     }
 
-    &.account{
-      font-size: 13px;
-      line-height: 7px;
+    &.red{
+      margin-top: 15px;
+      line-height: 12px;
+      color: red;
+      font-size: 10px;
+      margin-bottom: 15px;
     }
   }
   .goose {
