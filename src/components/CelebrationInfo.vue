@@ -64,7 +64,7 @@ export default {
       heyExpanded: false,
       bum: {
         name: "신기연",
-        account: "국민은행 80350200031139"
+        account: "국민은행 80350200031193"
       },
       bumdad: {
         name: "신조용",
